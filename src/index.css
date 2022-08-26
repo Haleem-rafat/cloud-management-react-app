@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  li {
+    @apply p-4 text-xl hover:text-2xl hover:text-indigo-600 cursor-pointer;
+  }
 
+  button {
+    @apply bg-indigo-600 py-3 px-8 rounded-md text-white;
+  }
 
-    li {
-        @apply p-4 text-xl hover:text-2xl hover:text-indigo-600 cursor-pointer
-    }
-
-    button {
-        @apply bg-indigo-600 py-3 px-8 rounded-md text-white
-        
-        
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 }

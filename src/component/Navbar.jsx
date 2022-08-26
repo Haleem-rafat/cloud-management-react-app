@@ -6,6 +6,14 @@ const Navbar = () => {
   const handelNav = () => {
     setNave(!nav);
   };
+  const onRouteClick = (e, { name, route }) => {
+    const anchor = document.querySelector(route);
+    anchor.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
+  };
   return (
     <div className="w-screen h-[80px] bg-zinc-200 fixed drop-shadow-lg z-30">
       <div className="px-4 flex justify-between items-center w-full h-full">
@@ -13,12 +21,22 @@ const Navbar = () => {
           <h1 className="font-bold text-3xl mr-4 sm:text-4xl cursor-default">
             Cloud.
           </h1>
-          <ul className=" hidden sm:flex">
-            <li>Home</li>
-            <li>About</li>
-            <li>Support</li>
-            <li>Platform</li>
-            <li>Pricing</li>
+          <ul className=" hidden sm:flex gap-10">
+            <a href="#home" onClick={onRouteClick}>
+              Home
+            </a>
+            <a href="#About" onClick={onRouteClick}>
+              About
+            </a>
+            <a href="#Support" onClick={onRouteClick}>
+              Support
+            </a>
+            <a href="#Platform" onClick={onRouteClick}>
+              Platform
+            </a>
+            <a href="#Pricing" onClick={onRouteClick}>
+              Pricing
+            </a>
           </ul>
         </div>
         <div className="hidden sm:flex">
@@ -44,11 +62,41 @@ const Navbar = () => {
             : "hidden"
         }
       >
-        <li className="border-b-4  border-zinc-300">Home</li>
-        <li className="border-b-4  border-zinc-300">About</li>
-        <li className="border-b-4  border-zinc-300">Support</li>
-        <li className="border-b-4  border-zinc-300">Platform</li>
-        <li className="border-b-4  border-zinc-300">Pricing</li>
+        <a
+          href="#home"
+          onClick={onRouteClick}
+          className="border-b-4  border-zinc-300"
+        >
+          Home
+        </a>
+        <a
+          href="#About"
+          onClick={onRouteClick}
+          className="border-b-4  border-zinc-300"
+        >
+          About
+        </a>
+        <a
+          href="#Support"
+          onClick={onRouteClick}
+          className="border-b-4  border-zinc-300"
+        >
+          Support
+        </a>
+        <a
+          href="#Platform"
+          onClick={onRouteClick}
+          className="border-b-4  border-zinc-300"
+        >
+          Platform
+        </a>
+        <a
+          href="#Pricing"
+          onClick={onRouteClick}
+          className="border-b-4  border-zinc-300"
+        >
+          Pricing
+        </a>
         <div className="flex flex-col">
           <button className="px-8 my-3 bg-transparent text-indigo-600 border-2 border-indigo-600 mb-4 hover:bg-indigo-600 hover:text-white">
             Sign In
